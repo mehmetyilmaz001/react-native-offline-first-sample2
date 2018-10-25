@@ -1,0 +1,3 @@
+rootProject.name = 'offline_first_sample'
+
+include ':app'
