@@ -15,10 +15,14 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, [action.payload.prop]: action.payload.value}
 
         case TODO_CREATE:
-            return INITIAL_STATE;
+            return { ...state, todos: [...state.todos, action.payload]};
 
         case TODO_SAVE_SUCCESS:
             return INITIAL_STATE;   
+
+        case TODOS_FETCH_SUCCESS:
+            console.log(action);
+            return { ...state, todos: action.payload}
         
         default:
             return state;
